@@ -1,0 +1,24 @@
+<html><body><div id="root"></div><script src="https://unpkg.com/vue@2.6.10/dist/vue.min.js"></script><script>
+new Vue({ render: h => h({
+  template: `<div>
+  <ul>
+    <li v-for="dir of dirs">
+      <a :href="dir.path">{{dir.path}}</a>
+    </li>
+  </ul>
+</div>`,
+  data() {
+    return {
+      dirs: []
+    }
+  },
+  async mounted() {
+    const user = window.location.hostname.split('.').shift()
+    const repo = window.location.pathname.split('/').filter(x => x).shift()
+    const url = `https://api.github.com/repos/${user}/${repo}/contents`
+    const data = await fetch(url);
+    const blobs = await data.json();
+    this.dirs = blobs.filter(x => x.type === 'dir' && !/^_/.test(x.path))
+  }
+})}).$mount('#root')
+</script></body></html>
