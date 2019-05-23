@@ -1,0 +1,53 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #000;
+  .sudoku-board {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .sudoku {
+      display: flex;
+      flex-direction: column;
+      background-color: #fff;
+      .row, .guessing, .freezing {
+        display: flex;
+      }
+      .delimiter {
+        height: 1rem;
+        background-color: #000;
+      }
+    }
+    .controls {
+      display: flex;
+      flex-direction: column;
+      width: 10rem;
+      textarea {
+        text-align: center;
+      }
+    }
+  }
+}
+
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #000;
+  width: 2.8rem;
+  height: 2.8rem;
+  line-height: 1.4rem;
+  text-align: center;
+  .value {
+    word-wrap: break-word;
+    word-break: break-all;
+    &.red {
+      color: red;
+    }
+    &.blue {
+      color: blue;
+    }
+  }
+}
