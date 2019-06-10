@@ -375,6 +375,7 @@ const SudokuBoard = {
 const vm = new Vue({ render: h => h(SudokuBoard) }).$mount('#sudoku');
 window.sudoku = vm.$children[0].$data.sudoku;
 // sudoku.freeze(0, 1, false);
+sudoku.init();
 /*
 sudoku.load(`
 1**7*2*36
@@ -387,9 +388,9 @@ sudoku.load(`
 *2***9873
 69*2*3**4
 `)
-*/
 sudoku.resolveAll();
-sudoku.init();
+*/
+/*
 sudoku.load(`
 **5****4*
 **2***8**
@@ -400,5 +401,18 @@ sudoku.load(`
 96**8571*
 **4***5**
 *1****9**
+`)
+sudoku.resolveAll();
+*/
+sudoku.load(`
+*748**9**
+*******86
+****931**
+*6***5*9*
+1***4***7
+*4*9***2*
+**863****
+92*******
+**3**976*
 `)
 sudoku.resolveAll();
