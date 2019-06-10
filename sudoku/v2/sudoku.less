@@ -1,0 +1,64 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #000;
+  .sudoku-board {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .sudoku {
+      display: flex;
+      flex-direction: column;
+      background-color: #fff;
+      .row, .guessing, .freezing {
+        display: flex;
+      }
+      .delimiter {
+        height: 1rem;
+        background-color: #000;
+      }
+    }
+    .controls {
+      display: flex;
+      justify-content: space-around;
+      .input {
+        display: flex;
+        flex-direction: column;
+        width: 10rem;
+        padding: 0.5rem;
+        textarea {
+          text-align: center;
+        }
+      }
+      .algos {
+        padding: 0.5rem;
+        label {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #000;
+  width: 3.3rem;
+  height: 3.3rem;
+  line-height: 1.1rem;
+  text-align: center;
+  .value {
+    word-wrap: break-word;
+    word-break: break-all;
+    &.red {
+      color: red;
+    }
+    &.blue {
+      color: blue;
+    }
+  }
+}
